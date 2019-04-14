@@ -1,0 +1,72 @@
+inherit_from: '.rubocop-disabled.yml'
+
+AllCops:
+  TargetRubyVersion: 2.6.0
+  Exclude:
+    - '**/db/*'
+    - '**/Gemfile'
+    - '**/Gemfile.lock'
+    - '**/Rakefile'
+    - '**/vendor/**/*'
+    - '**/spec_helper.rb'
+    - 'config/initializers/cors.rb'
+    - '**/config/puma.rb'
+    - '**/config/application.rb'
+    - '**/bin/*'
+    - '**/config/routes.rb'
+    - '**/config/environments/*'
+
+ClassLength:
+  CountComments: false
+  Max: 150
+
+ModuleLength:
+  CountComments: false
+  Max: 250
+  Exclude:
+    - '**/spec/**/*'
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 150
+  Exclude:
+    - '**/spec/**/*'
+
+MethodLength:
+  CountComments: false
+  Max: 50
+
+BlockLength:
+  CountComments: false
+  Max: 50
+  Exclude:
+    - '**/spec/**/*'
+    - '**/*.rake'
+    - '**/factories/**/*'
+    - '**/config/routes.rb'
+
+Metrics/AbcSize:
+ Max: 45
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+  Enabled: true
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Style/AndOr:
+  Exclude:
+    - '**/*controller.rb'
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - '**/spec/**/*'
