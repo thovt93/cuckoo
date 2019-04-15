@@ -32,10 +32,13 @@ gem 'devise_token_auth', '1.1.0'
 gem 'fast_jsonapi', '1.5'
 gem 'oj', '3.7.11'
 
+gem 'newrelic_rpm'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'awesome_print', '~> 1.8.0'
+  gem 'pry-byebug', '3.7.0'
 end
 
 group :development do
