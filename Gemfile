@@ -17,7 +17,7 @@ gem 'puma', '~> 3.11'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -31,6 +31,7 @@ gem 'rack-cors'
 gem 'devise_token_auth', '1.1.0'
 gem 'fast_jsonapi', '1.5'
 gem 'oj', '3.7.11'
+# gem 'active_model_serializers', '~> 0.10.0'
 
 gem 'newrelic_rpm'
 
