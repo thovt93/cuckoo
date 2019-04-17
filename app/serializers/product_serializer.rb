@@ -1,12 +1,11 @@
 class ProductSerializer < ApplicationSerializer
-  # include Rails.application.routes.url_helpers
-  attributes :id, :name, :description, :image
+  include Rails.application.routes.url_helpers
+  attributes :id, :name, :description, :images
 
-  # def image
-    # rails_blob_path(object.images) if object.images.attached?
-  # end
-
-  attributes :image do |product|
-    Rails.application.routes.url_helpers.rails_blob_path(product.image) if product.image.attached?
+  attributes :images do |product|
+    return unless product.images.attachments
+    product.images.map do |image| 
+      Rails.application.routes.url_helpers.rails_blob_path(image)
+    end
   end
 end
