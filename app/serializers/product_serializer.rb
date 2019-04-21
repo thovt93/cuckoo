@@ -4,8 +4,12 @@ class ProductSerializer < ApplicationSerializer
 
   attributes :images do |product|
     return unless product.images.attachments
-    product.images.map do |image| 
-      Rails.application.routes.url_helpers.rails_blob_path(image)
+    product.images.map do |image|
+      ActiveStorage::Current.set(host: 'localhost:3000') do
+        image.variant(resize: '50x50!',
+                      gravity: 'center',
+                      background: 'white').processed.service_url
+      end
     end
   end
 end
