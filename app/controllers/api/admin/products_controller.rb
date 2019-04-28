@@ -2,8 +2,8 @@ class Api::Admin::ProductsController < Api::Admin::BaseController
   before_action :product, only: [:update, :destroy, :show]
 
   def index
-    product = Product.all
-    render json: ProductSerializer.new(product).serialized_json
+    products = Product.all
+    render json: ProductSerializer.new(products).serialized_json
   end
 
   def create
