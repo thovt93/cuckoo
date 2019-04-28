@@ -1,4 +1,4 @@
-class ProductSerializer < ApplicationSerializer
+class Api::Admin::ProductSerializer < Api::Admin::ApplicationSerializer
   include Rails.application.routes.url_helpers
   attributes :id, :name, :description, :images
 
