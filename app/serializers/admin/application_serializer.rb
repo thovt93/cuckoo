@@ -1,3 +1,3 @@
-class Api::Admin::ApplicationSerializer
+class Admin::ApplicationSerializer
   include FastJsonapi::ObjectSerializer
 end

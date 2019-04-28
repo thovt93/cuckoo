@@ -1,4 +1,4 @@
-class Api::Admin::BaseController < ActionController::API
+class Admin::BaseController < ActionController::API
   include DeviseTokenAuth::Concerns::SetUserByToken
   # before_action :authorize_admin
 
