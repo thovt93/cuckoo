@@ -147,3 +147,4 @@ Table role_users {
   created_at varchar
   updated_at varchar
 }
+
