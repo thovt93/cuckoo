@@ -28,7 +28,11 @@ Table products {
 Table variants {
   id int [pk]
   product_id int [ref: > products.id]
+  name varchar
+  color_code varchar
+  cost varchar
   price varchar
+  position int
   created_at varchar
   updated_at varchar
 }
@@ -47,6 +51,7 @@ Table line_items {
   variant_id int [ref: > variants.id]
   quantity int
   price int
+  cost int
   created_at varchar
   updated_at varchar
 }
