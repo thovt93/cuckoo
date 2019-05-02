@@ -7,7 +7,10 @@ Rails.application.routes.draw do
     end
 
     namespace :admin, defaults: {format: :json} do
-      resources :products
+      resources :products do
+        resources :variants
+      end
+
       resources :brands
       resources :categories
     end

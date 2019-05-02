@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2019_04_21_161955) do
 
   create_table "option_values", force: :cascade do |t|
     t.bigint "option_type_id"
+    t.string "color_code"
     t.string "name"
     t.string "presentation"
     t.datetime "created_at", null: false
@@ -121,7 +122,6 @@ ActiveRecord::Schema.define(version: 2019_04_21_161955) do
     t.string "sku"
     t.bigint "product_id"
     t.string "name"
-    t.string "color_code"
     t.float "cost", default: 0.0
     t.float "price", default: 0.0
     t.integer "position", default: 0

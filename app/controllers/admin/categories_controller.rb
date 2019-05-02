@@ -4,17 +4,17 @@ module Admin
 
     def index
       categories = Category.all
-      render json: CategorySerializer.new(categories).serialized_json
+      render json: categories
     end
     
     def create
       category = Category.create! category_params
-      render json: CategorySerializer.new(category).serialized_json, status: :created
+      render json: category, status: :created
     end
 
     def update
       category.update_attributes! category_params
-      render json: CategorySerializer.new(category).serialized_json
+      render json: category
     end
 
     def destroy

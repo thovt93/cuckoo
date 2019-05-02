@@ -1,3 +1,3 @@
-class Admin::ApplicationSerializer
-  include FastJsonapi::ObjectSerializer
+class Admin::ApplicationSerializer < ActiveModel::Serializer
+  # include FastJsonapi::ObjectSerializer
 end

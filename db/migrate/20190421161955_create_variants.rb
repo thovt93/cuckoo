@@ -4,7 +4,6 @@ class CreateVariants < ActiveRecord::Migration[5.2]
       t.string :sku
       t.references :product, foreign_key: true
       t.string :name
-      t.string :color_code
       t.float :cost, precision: 6, scale: 2, default: 0
       t.float :price, precision: 6, scale: 2, default: 0
       t.integer :position, default: 0

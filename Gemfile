@@ -29,9 +29,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rack-cors'
 
 gem 'devise_token_auth', '1.1.0'
-gem 'fast_jsonapi', '1.5'
+# gem 'fast_jsonapi', '1.5'
 gem 'oj', '3.7.11'
-# gem 'active_model_serializers', '~> 0.10.0'
+gem 'active_model_serializers', '~> 0.10.0'
 
 gem 'newrelic_rpm'
 

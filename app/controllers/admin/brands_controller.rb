@@ -4,17 +4,17 @@ module Admin
 
     def index
       brands = Brand.all
-      render json: BrandSerializer.new(brands).serialized_json
+      render json: brands
     end
     
     def create
       brand = Brand.create! brand_params
-      render json: BrandSerializer.new(brand).serialized_json, status: :created
+      render json: brand, status: :created
     end
 
     def update
       brand.update_attributes! brand_params
-      render json: BrandSerializer.new(brand).serialized_json
+      render json: brand
     end
 
     def destroy
