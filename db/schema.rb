@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_21_161955) do
+ActiveRecord::Schema.define(version: 2019_05_06_152457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,12 +57,20 @@ ActiveRecord::Schema.define(version: 2019_04_21_161955) do
 
   create_table "option_values", force: :cascade do |t|
     t.bigint "option_type_id"
-    t.string "color_code"
     t.string "name"
     t.string "presentation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["option_type_id"], name: "index_option_values_on_option_type_id"
+  end
+
+  create_table "option_values_variants", force: :cascade do |t|
+    t.bigint "option_value_id"
+    t.bigint "variant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["option_value_id"], name: "index_option_values_variants_on_option_value_id"
+    t.index ["variant_id"], name: "index_option_values_variants_on_variant_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -132,6 +140,8 @@ ActiveRecord::Schema.define(version: 2019_04_21_161955) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "option_values", "option_types"
+  add_foreign_key "option_values_variants", "option_values"
+  add_foreign_key "option_values_variants", "variants"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "roles_users", "roles"

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
         resources :variants
       end
 
+      resources :option_types
+
       resources :brands
       resources :categories
     end

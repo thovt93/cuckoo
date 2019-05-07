@@ -17,9 +17,11 @@ module Admin
 
     def update
       product.assign_attributes product_params[:product]
-      variant = product.variants.find(product_params[:variant][:variant_id])
-      variant.assign_attributes.product_params[:variant]
+      # variant = product.variants.find(product_params[:variant][:variant_id])
+      variant = product.variants.first
+      variant.assign_attributes product_params[:variant]
 
+      variant.save!
       product.save!
 
       render json: product
@@ -46,7 +48,7 @@ module Admin
                               :name,
                               :description,
                               :available_on],
-                    variant: [:price, :variant_id, :image])
+                    variant: [:price, :cost, :variant_id, :image])
     end
   end
 end

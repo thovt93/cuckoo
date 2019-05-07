@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-option_type = OptionType.create name: 'color'
+option_type = OptionType.create name: 'color', presentation: 'Color'
 
 OptionValue.create(option_type: option_type, name: 'Red', presentation: 'Red')
 OptionValue.create(option_type: option_type, name: 'Pink', presentation: 'Pink')
