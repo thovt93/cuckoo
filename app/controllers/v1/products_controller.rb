@@ -3,12 +3,12 @@ module V1
     before_action :product, only: [:update, :destroy, :show]
 
     def index
-      product = Product.all
-      render json: ProductsSerializer.new(product).serialized_json
+      products = Product.all
+      render json: products
     end
 
     def show
-      render json: ProductSerializer.new(product).serialized_json
+      render json: product
     end
 
     private
